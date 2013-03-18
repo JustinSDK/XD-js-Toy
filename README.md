@@ -7,7 +7,7 @@ The example library of my writing [JavaScript Essence](http://openhome.cc/eGossi
 * gossip-0.2.js - [Writing a DOM Library](http://openhome.cc/eGossip/JavaScript/DOMLibrary.html)
 * gossip-0.3.js - [Writing an Event Library](http://openhome.cc/eGossip/JavaScript/EventLibrary.html)
 * gossip-0.4.js - [Writing a Style Library](http://openhome.cc/eGossip/JavaScript/StyleLibrary.html)
-* gossip-0.5.js - Writing an Ajax Library (Under construction)
+* gossip-0.5.js - [Writing an Ajax Library](http://openhome.cc/eGossip/JavaScript/AjaxLibrary.html)
 
 ***
 http://openhome.cc
