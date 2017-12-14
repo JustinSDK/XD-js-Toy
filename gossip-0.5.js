@@ -567,42 +567,48 @@
                 });
             }
        },
-       fadeIn: function(speed) {
+       fadeIn: function(speed, steps) {
             speed = speed || 5000;
+            steps = steps || 10;
             return XD.each(this, function(element) {
                 var target = element.previousOpacity || 1;
                 delete element.previousOpacity;
-                var step = target / speed * 500;
+                var timeInterval = speed / steps;
+                var valueStep = target / steps;
                 var opt = 0;
                 setTimeout(function next() {
-                    opt += step;
+                    opt += valueStep;
                     if(opt < target) {
                         XD(element).opacity(opt);
-                        setTimeout(next);
+                        setTimeout(next, timeInterval);
                     }
                     else {
                         XD(element).opacity(target);
                     }
-                }, 500);       
+                }, timeInterval);       
             });
        },
-       fadeOut: function(speed) {
+       fadeOut: function(speed, steps) {
            speed = speed || 5000;
+           steps = steps || 10;
            return XD.each(this, function(element) {
                var elementXD = XD(element);
                element.previousOpacity = elementXD.opacity();
-               var step = element.previousOpacity / speed * 500;
+               
+               var timeInterval = speed / steps;
+               var valueStep = element.previousOpacity / steps;
+               
                var opt = element.previousOpacity;
                setTimeout(function next() {
-                   opt -= step;
+                   opt -= valueStep;
                    if(opt > 0) {
                        elementXD.opacity(opt);
-                       setTimeout(next);
+                       setTimeout(next, timeInterval);
                    }
                    else {
                        elementXD.opacity(0);
                    }
-               }, 500);       
+               }, timeInterval);       
            });
        },
        hasClass: function(clz) {
